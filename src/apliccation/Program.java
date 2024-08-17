@@ -40,12 +40,21 @@ public class Program {
 		
 		System.out.println("\n teste 4 INSERT");
 		
-		Seller obj = new Seller(null , "ruan","ruan@gmail.com",new Date(), 1500.0,new Department(1,"Computers"));
+		Seller obj = new Seller(null , "ruan","ruan@gmail.com",new Date(), 1500.0,new Department(1,null));
 		sellerDao.insert(obj); 
 		System.out.println("Inserted! New Id " + obj.getId());
 	
+		System.out.println("TESTE 5 Seller UPDATE");
+		
+		seller = sellerDao.findById(1);
+		seller.setName("Martha waine");
+		sellerDao.update(seller);
+		System.out.println("Update completed!");
 		
 		
+		System.out.println("Teste 6 DeleById");
+		sellerDao.deleteById(19);
+		System.out.println("Delete Completed");
 
 	}
 
